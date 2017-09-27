@@ -1,0 +1,41 @@
+{
+  "name": "blake",
+  "version": "1.0.0",
+  "description": "A bot for running and reporting ticket queries",
+  "repository": "https://gitlab.e1c.net/bots/blake",
+  "license": "UNLICENSED",
+  "publishConfig": {
+    "registry": "https://npm.e1c.net"
+  },
+  "main": "app.js",
+  "scripts": {
+    "develop": "node node_modules/nodemon/bin/nodemon.js app.js",
+    "start": "node app.js",
+    "lint": "node_modules/.bin/eslint $@ **/*.js *.js",
+    "test": "mocha"
+  },
+  "eslintConfig": {
+    "extends": [
+      "e1c/es6/node",
+      "e1c/test/mocha",
+      "e1c/test/chai"
+    ]
+  },
+  "dependencies": {
+    "@slack/client": "^3.4.0",
+    "bluebird": "^3.4.0",
+    "request": "^2.81.0",
+    "request-promise": "^4.2.1",
+    "truncate": "^2.0.0",
+    "winston": "^2.3.1"
+  },
+  "devDependencies": {
+    "chai": "^3.4.1",
+    "eslint-config-e1c": "^4.1.0",
+    "mocha": "^2.3.4",
+    "nodemon": "^1.8.1"
+  },
+  "pre-commit": [
+    "lint"
+  ]
+}
